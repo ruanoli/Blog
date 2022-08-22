@@ -6,7 +6,7 @@ namespace Blog.Controller {
     public class HomeController : ControllerBase {
 
         [HttpGet("")]
-        public IActionResult Get() {
+        public async Task<IActionResult> GetAsync() {
             return Ok();
         }
     }
