@@ -56,7 +56,7 @@ namespace Blog.Controller {
 
                 return Created($"v1/categories/{category.Id}", new ResultViewModel<Category>(category));
             } catch (DbUpdateException ex) {
-                return StatusCode(500, new ResultViewModel<Category>("Não foi possível incluir a categoria"));
+                return StatusCode(500, new ResultViewModel<Category>("Não foi possível criar a categoria"));
             } catch {
                 return StatusCode(500, new ResultViewModel<Category>("Falha interna no servidor"));
             }

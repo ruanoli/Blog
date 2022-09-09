@@ -15,7 +15,7 @@ namespace Blog.Data
         // public DbSet<UserRole> UserRoles { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder options)
-            => options.UseSqlServer("Data Source=TI4C-PC\\SQLEXPRESS;Initial Catalog=blog-app-db;Integrated Security=True;");
+            => options.UseSqlServer("Data Source=DESKTOP-J9EA7DU\\MSSQLSERVER01;Initial Catalog=blog-app-db;Integrated Security=True;");
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
