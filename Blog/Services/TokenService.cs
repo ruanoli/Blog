@@ -17,7 +17,7 @@ namespace Blog.Services
             //chave
             //O tokenHandler espera um array de bytes e não uma string.
             //convertendo a chave para bytes:
-            var key = Encoding.ASCII.GetBytes(Configuration.JwtToken);
+            var key = Encoding.ASCII.GetBytes(Settings.JwtToken);
 
             //configurações do token, contém todas as informações do token.
             var tokenDescriptor = new SecurityTokenDescriptor()

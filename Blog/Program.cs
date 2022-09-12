@@ -8,7 +8,7 @@ using System.Text;
 var builder = WebApplication.CreateBuilder(args);
 
 //Configuração da autenticação
-var key = Encoding.ASCII.GetBytes(Configuration.JwtToken);
+var key = Encoding.ASCII.GetBytes(Settings.JwtToken);
 builder.Services.AddAuthentication(x =>
 {
     x.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
