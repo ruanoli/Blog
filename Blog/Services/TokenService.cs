@@ -26,6 +26,7 @@ namespace Blog.Services
                 {
                     new Claim(ClaimTypes.Name,"ruanoliveira"), //User.Identity.Name
                     new Claim(ClaimTypes.Role,"admin"), //User.IsInRole
+                    new Claim(ClaimTypes.Role,"user"), //User.IsInRole
                     new Claim("fruta", "banana")
                 }),
                 //Definir o tempo de duração do token
