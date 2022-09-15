@@ -1,4 +1,5 @@
-﻿using Blog.Models;
+﻿using Blog.Extensions;
+using Blog.Models;
 using Microsoft.IdentityModel.Tokens;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
@@ -19,16 +20,13 @@ namespace Blog.Services
             //convertendo a chave para bytes:
             var key = Encoding.ASCII.GetBytes(Settings.JwtToken);
 
+            var claims = user.GetClaims();
+
             //configurações do token, contém todas as informações do token.
             var tokenDescriptor = new SecurityTokenDescriptor()
             {
-                Subject = new ClaimsIdentity(new Claim[]
-                {
-                    new Claim(ClaimTypes.Name,"ruanoliveira"), //User.Identity.Name
-                    new Claim(ClaimTypes.Role,"admin"), //User.IsInRole
-                    new Claim(ClaimTypes.Role,"user"), //User.IsInRole
-                    new Claim("fruta", "banana")
-                }),
+                Subject = new ClaimsIdentity(claims),
+
                 //Definir o tempo de duração do token
                 Expires = DateTime.UtcNow.AddHours(8),
 
